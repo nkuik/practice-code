@@ -5,6 +5,7 @@ EMPTY = '-'
 TICK = object()
 
 Query = namedtuple('Query', ('y', 'x'))
+Transition = namedtuple('Transition', ('y', 'x', 'state'))
 
 
 class Grid():
@@ -19,7 +20,7 @@ class Grid():
         print('Grid')
         for row in self.rows:
             print(''.join(row))
-        return 'Complete'
+        return 'Done'
 
     def query(self, y, x):
         return self.rows[y % self.height][x % self.width]
@@ -59,9 +60,6 @@ def count_neighbors(y, x):
     return count
 
 
-Transition = namedtuple('Transition', ('y', 'x', 'state'))
-
-
 def game_logic(state, neighbors):
     if state == ALIVE:
         if neighbors < 2:
@@ -77,8 +75,8 @@ def game_logic(state, neighbors):
 def step_cell(y, x):
     state = yield Query(y, x)
     neighbors = yield from count_neighbors(y, x)
-    next_state = game_logic(y, x, next_state)
-    yield Transitiion(y, x, next_state)
+    next_state = game_logic(state, neighbors)
+    yield Transition(y, x, next_state)
 
 
 def simulate(height, width):
@@ -87,4 +85,3 @@ def simulate(height, width):
             for x in range(width):
                 yield from step_cell(y, x)
         yield TICK
-

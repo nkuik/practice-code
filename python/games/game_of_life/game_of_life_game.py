@@ -1,32 +1,40 @@
 import random
 
-import game_of_life_rules as game
+import game_of_life_rules as rules
 
 
-def setup_game(height, width):
-    grid = game.Grid(height, width)
-    grid.assign(random.randrange(height),
-                random.randrange(width),
-                game.ALIVE)
-    return grid
+class Game():
+    def __init__(self, grid, simulation):
+        self.grid = grid
+        self.simulation = simulation
+
+    def next_round(self):
+        return rules.live_a_generation(self.grid, self.simulation)
 
 
 def play_game():
     height = input('What height would you like?: ')
     width = input('What width would you like?: ')
-    grid = setup_game(int(height), int(width))
-    sim = game.simulate(grid.height, grid.width)
-    print('Here is the grid:\n{}'.format(grid))
+
+    grid = rules.Grid(int(height), int(width))
+    grid.assign(random.randrange(int(height)),
+                random.randrange(int(width)),
+                rules.ALIVE)
+    sim = rules.simulate(grid.height, grid.width)
+
+    game = Game(grid, sim)
+
+    print('Here is the grid:\n{}'.format(game.grid))
 
     keep_playing = True
     while keep_playing:
         persistence = input('Play another round? (y or n): ')
         if persistence == 'y':
-            game.live_a_generation(grid, sim)
-            print('Here is the grid:\n{}'.format(grid))
+            game.next_round()
+            print('Here is the grid:\n{}'.format(game.grid))
         else:
             keep_playing = False
-            print('Here is the final grid:\n{}'.format(grid))
+            print('Here is the final grid:\n{}'.format(game.grid))
 
 
 if __name__ == '__main__':
