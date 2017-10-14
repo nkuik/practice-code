@@ -15,7 +15,7 @@ using System;
 public class Node
 {
     public Node Next;
-    public object Value;
+    public Object Value;
 }
 
 public class LinkedList
@@ -28,7 +28,7 @@ public class LinkedList
         Length = ComputeLength();
     }
 
-    public void Add(object value)
+    public void Add(Object value)
     {
         Node forAdding = new Node();
         forAdding.Value = value;
@@ -38,7 +38,19 @@ public class LinkedList
 
     public int ComputeLength()
     {
-        return 4;
+        return RecurseLength(_head);
+    }
+
+    private int RecurseLength(Node node)
+    {
+        if (node == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1 + RecurseLength(node.Next);
+        }
     }
 
     public void Insert(object val, int index)
@@ -75,5 +87,6 @@ class Program
         LinkedList myList1 = new LinkedList();
 
         Console.WriteLine(myList1.ComputeLength());
+        Console.WriteLine(myList1.Length);
     }
 }
