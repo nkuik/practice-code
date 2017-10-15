@@ -21,7 +21,6 @@ public class Node
 public class LinkedList
 {
     private Node head;
-    private Node current;
 
     public void Add(Object value)
     {
@@ -30,12 +29,11 @@ public class LinkedList
         if (head == null)
         {
             head = forAdding;
-            current = head;
         }
         else
         {
-            current.Next = forAdding;
-            current = forAdding;
+            forAdding.Next = head;
+            head = forAdding;
         }
     }
 
@@ -108,11 +106,13 @@ class Program
         LinkedList myList1 = new LinkedList();
 
         myList1.Add("Hello World");
+        Console.WriteLine(myList1.Length());
         myList1.Add("Poo");
+        Console.WriteLine(myList1.Length());
         myList1.Insert("This", 1);
+        Console.WriteLine(myList1.Length());
         myList1.Add("Another");
+        Console.WriteLine(myList1.Length());
 
-        Node poo = myList1.Get(1);
-        Console.WriteLine(poo.Value);
     }
 }
