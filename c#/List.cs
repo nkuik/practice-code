@@ -20,28 +20,31 @@ public class Node
 
 public class LinkedList
 {
-    private Node _head;
-    public int Length;
-
-    public LinkedList()
-    {
-        Length = ComputeLength();
-    }
+    private Node head;
+    private Node current;
 
     public void Add(Object value)
     {
         Node forAdding = new Node();
         forAdding.Value = value;
-        Node current = _head;
-        current.Next = forAdding;
+        if (head == null)
+        {
+            head = forAdding;
+            current = head;
+        }
+        else
+        {
+            current.Next = forAdding;
+            current = forAdding;
+        }
     }
 
-    public int ComputeLength()
+    public int Length()
     {
-        return RecurseLength(_head);
+        return RecursiveLength(head);
     }
 
-    private int RecurseLength(Node node)
+    private int RecursiveLength(Node node)
     {
         if (node == null)
         {
@@ -49,18 +52,36 @@ public class LinkedList
         }
         else
         {
-            return 1 + RecurseLength(node.Next);
+            return 1 + RecursiveLength(node.Next);
         }
     }
 
     public void Insert(object val, int index)
     {
-        throw new NotImplementedException();
+        if (index > Length())
+        {
+            throw new IndexOutOfRangeException();
+        }
+        else
+        {
+            Node thisNode = head;
+            for (int i = 0; i < index; i++)
+            {
+                thisNode = thisNode.Next;
+            }
+            Node next = thisNode.Next;
+            thisNode.Next = new Node () { Value = val, Next = next };
+        }
     }
 
     public Node Get(int index)
     {
-        throw new NotImplementedException();
+        Node thisNode = head;
+        for (int i = 0; i < index; i++)
+            {
+                thisNode = thisNode.Next;
+            }
+        return thisNode;
     }
 
     public void Remove(int index)
@@ -86,7 +107,12 @@ class Program
         Console.WriteLine("Add First:");
         LinkedList myList1 = new LinkedList();
 
-        Console.WriteLine(myList1.ComputeLength());
-        Console.WriteLine(myList1.Length);
+        myList1.Add("Hello World");
+        myList1.Add("Poo");
+        myList1.Insert("This", 1);
+        myList1.Add("Another");
+
+        Node poo = myList1.Get(1);
+        Console.WriteLine(poo.Value);
     }
 }
