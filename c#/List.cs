@@ -23,9 +23,9 @@ public class LinkedList
     private Node head;
 
     public void Add(Object value)
+    // Only adds at the beginning right now
     {
-        Node forAdding = new Node();
-        forAdding.Value = value;
+        Node forAdding = new Node() { Value = value };
         if (head == null)
         {
             head = forAdding;
@@ -76,20 +76,45 @@ public class LinkedList
     {
         Node thisNode = head;
         for (int i = 0; i < index; i++)
-            {
-                thisNode = thisNode.Next;
-            }
+        {
+            thisNode = thisNode.Next;
+        }
         return thisNode;
     }
 
     public void Remove(int index)
     {
-        throw new NotImplementedException();
+        if (index > Length())
+        {
+            throw new IndexOutOfRangeException();
+        }
+        else
+        {
+            Node thisNode = head;
+            Node previousNode = null;
+            for (int i = 0; i < index; i++)
+            {
+                previousNode = thisNode;
+                thisNode = thisNode.Next;
+            }
+            previousNode.Next = null;
+        }
     }
 
-    public Node Search(Node search_val)
+    public int Search(string search_val)
     {
-        throw new NotImplementedException();
+        {
+            Node thisNode = head;
+            for (int i = 0; i < Length(); i++)
+            {
+                if (thisNode.Value == search_val)
+                {
+                    return i;
+                }
+                thisNode = thisNode.Next;
+            }
+            return -1;
+        }
     }
 
     public Node Max(int index)
@@ -104,15 +129,14 @@ class Program
     {
         Console.WriteLine("Add First:");
         LinkedList myList1 = new LinkedList();
+        myList1.Add("Hello");
+        myList1.Add("World");
+        myList1.Add("How");
+        myList1.Add("Are");
+        myList1.Add("You");
 
-        myList1.Add("Hello World");
-        Console.WriteLine(myList1.Length());
-        myList1.Add("Poo");
-        Console.WriteLine(myList1.Length());
-        myList1.Insert("This", 1);
-        Console.WriteLine(myList1.Length());
-        myList1.Add("Another");
-        Console.WriteLine(myList1.Length());
-
+        int search = myList1.Search("Hello");
+        Console.WriteLine(search);
+    
     }
 }
