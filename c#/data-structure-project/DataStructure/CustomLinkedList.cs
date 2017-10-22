@@ -91,14 +91,14 @@ namespace DataStructure
             }
         }
 
-        public Node Get(int index)
+        public Object Get(int index)
         {
             Node thisNode = head;
             for (int i = 0; i < index; i++)
             {
                 thisNode = thisNode.Next;
             }
-            return thisNode;
+            return thisNode.Value;
         }
 
         public void Remove(int index)

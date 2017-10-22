@@ -31,8 +31,37 @@ namespace Test
         [Fact]
         public void AddsNodeOnInstantiation()
         {
-            var _hasInitialValue = new DataStructure.CustomLinkedList("Hello");            
             Assert.Equal(_hasInitialValue.Length(), 1);
+        }
+
+        [Fact]
+        public void AddsSecondNode()
+        {
+            var _hasInitialValue = new DataStructure.CustomLinkedList("Hello");            
+            _hasInitialValue.Add("World");
+            Assert.Equal(_hasInitialValue.Length(), 2);
+        }
+
+        [Fact]
+        public void Length()
+        {
+            var _hasInitialValue = new DataStructure.CustomLinkedList("Hello");            
+            _hasInitialValue.Add("World");
+            _hasInitialValue.Add("My");
+            _hasInitialValue.Add("Name");
+            _hasInitialValue.Add("Is");
+            _hasInitialValue.Add("Hal");
+            Assert.Equal(_hasInitialValue.Length(), 6);
+        }
+
+        [Fact]
+        public void GetReturnsCorrectNode()
+        {
+            var _hasInitialValue = new DataStructure.CustomLinkedList("Hello");            
+            _hasInitialValue.Add("World");
+            _hasInitialValue.Add("What");
+            var value = _hasInitialValue.Get(1);
+            Assert.Equal(value, "World");
         }
     }
 }
