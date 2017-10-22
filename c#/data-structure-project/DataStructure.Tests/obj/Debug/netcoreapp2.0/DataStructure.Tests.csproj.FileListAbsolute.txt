@@ -1,0 +1,15 @@
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/obj/Debug/netcoreapp2.0/DataStructure.Tests.csproj.CoreCompileInputs.cache
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/obj/Debug/netcoreapp2.0/DataStructure.Tests.AssemblyInfoInputs.cache
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/obj/Debug/netcoreapp2.0/DataStructure.Tests.AssemblyInfo.cs
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/xunit.runner.utility.netstandard15.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/xunit.runner.reporters.netstandard15.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.Tests.deps.json
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.Tests.runtimeconfig.json
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.Tests.runtimeconfig.dev.json
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.Tests.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.Tests.pdb
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/bin/Debug/netcoreapp2.0/DataStructure.pdb
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/obj/Debug/netcoreapp2.0/DataStructure.Tests.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure.Tests/obj/Debug/netcoreapp2.0/DataStructure.Tests.pdb

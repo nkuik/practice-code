@@ -1,0 +1,8 @@
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/bin/Debug/netstandard2.0/DataStructure.deps.json
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/bin/Debug/netstandard2.0/DataStructure.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/bin/Debug/netstandard2.0/DataStructure.pdb
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/obj/Debug/netstandard2.0/DataStructure.csproj.CoreCompileInputs.cache
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/obj/Debug/netstandard2.0/DataStructure.AssemblyInfoInputs.cache
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/obj/Debug/netstandard2.0/DataStructure.AssemblyInfo.cs
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/obj/Debug/netstandard2.0/DataStructure.dll
+/Users/nathankuik/code/practice-code/c#/data-structure-project/DataStructure/obj/Debug/netstandard2.0/DataStructure.pdb
