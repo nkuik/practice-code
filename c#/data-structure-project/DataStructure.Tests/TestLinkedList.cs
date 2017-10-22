@@ -122,5 +122,17 @@ namespace Test
             Assert.Equal(_hasInitialValue.Search("My"), 2);
             Assert.Equal(_hasInitialValue.Search("Hal"), 5);
         }
+
+        [Fact]
+        public void TestMax()
+        {
+            var _hasInitialValue = new DataStructure.CustomLinkedList(1);            
+            _hasInitialValue.Add(4);
+            _hasInitialValue.Add(8);
+            _hasInitialValue.Add(3);
+            _hasInitialValue.Add(6);
+            _hasInitialValue.Add(2);
+            Assert.Equal(_hasInitialValue.Max(), 8);
+        }
     }
 }

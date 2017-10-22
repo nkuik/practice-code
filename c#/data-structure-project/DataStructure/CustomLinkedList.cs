@@ -135,9 +135,20 @@ namespace DataStructure
             }
         }
 
-        public Node Max(int index)
+        public int Max()
         {
-            throw new NotImplementedException();
+            int maxSoFar = int.MinValue;
+            Node thisNode = head;
+            for (int i = 0; i < Length(); i++)
+            {
+                int value = (int) thisNode.Value;
+                if (value > maxSoFar)
+                {
+                    maxSoFar = value;
+                }
+                thisNode = thisNode.Next;
+            }
+            return maxSoFar;
         }
     }
 }
