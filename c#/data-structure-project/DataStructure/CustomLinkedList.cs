@@ -37,7 +37,7 @@ namespace DataStructure
         private void AddFirst(Node headNode)
         {
             head = headNode;
-            current = headNode;
+            current = head;
         }
 
         public void Add(Object value)
@@ -50,8 +50,7 @@ namespace DataStructure
             }
             else
             {
-                forAdding.Next = head;
-                head = forAdding;
+                current.Next = forAdding;
                 current = forAdding;
             }
         }
@@ -73,7 +72,7 @@ namespace DataStructure
             }
         }
 
-        public void Insert(object val, int index)
+        public void Insert(Object val, int index)
         {
             if (index > Length())
             {
@@ -82,7 +81,7 @@ namespace DataStructure
             else
             {
                 Node thisNode = head;
-                for (int i = 0; i < index; i++)
+                for (int i = 0; i < index - 1; i++)
                 {
                     thisNode = thisNode.Next;
                 }
@@ -116,7 +115,7 @@ namespace DataStructure
                     previousNode = thisNode;
                     thisNode = thisNode.Next;
                 }
-                previousNode.Next = null;
+                previousNode.Next = thisNode.Next;
             }
         }
 
