@@ -134,5 +134,19 @@ namespace Test
             _hasInitialValue.Add(2);
             Assert.Equal(_hasInitialValue.Max(), 8);
         }
+
+        [Fact]
+        public void TestReverse()
+        {
+            var _hasInitialValue = new DataStructure.CustomLinkedList(1);            
+            _hasInitialValue.Add(2);
+            _hasInitialValue.Add(3);
+            _hasInitialValue.Add(4);
+            _hasInitialValue.Add(5);
+            _hasInitialValue.Add(6);
+
+            _hasInitialValue.Reverse();
+
+        }
     }
 }

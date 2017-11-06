@@ -150,5 +150,10 @@ namespace DataStructure
             }
             return maxSoFar;
         }
+
+        public void Reverse()
+        {
+            
+        }
     }
 }
