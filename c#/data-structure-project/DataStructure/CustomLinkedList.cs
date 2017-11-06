@@ -153,7 +153,33 @@ namespace DataStructure
 
         public void Reverse()
         {
-            
+            Node nodeToSwap = head;
+            Node previousNode = null;
+            Node nextNode = null;
+            while (nodeToSwap != null)
+            {
+                // set nextNode before any reference swapping
+                nextNode = nodeToSwap.Next;
+                // Actually swap the reference of nodeToSwap's to next
+                nodeToSwap.Next = previousNode;
+                // Move along the list
+                previousNode = nodeToSwap;
+                nextNode = nextNode.Next;
+                nodeToSwap = nextNode;
+            }
+        }
+        public object[] ListToArray()
+        {
+            object[] arrayValues = new object[Length()];
+            {
+                Node thisNode = head;
+                for (int i = 0; i < Length(); i++)
+                {
+                    arrayValues[i] = (thisNode.Value);
+                    thisNode = thisNode.Next;
+                }
+            }
+            return arrayValues;
         }
     }
 }

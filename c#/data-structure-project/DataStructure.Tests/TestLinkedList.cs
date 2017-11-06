@@ -9,7 +9,7 @@ namespace Test
         private readonly CustomLinkedList _noInitialValue;
         private readonly CustomLinkedList _hasInitialValue;
 
-        public CustomLinkedListTest()
+        public void CustomLinkedListTest()
         {
             _noInitialValue = new DataStructure.CustomLinkedList();            
             _hasInitialValue = new DataStructure.CustomLinkedList("Hello");            
@@ -145,8 +145,7 @@ namespace Test
             _hasInitialValue.Add(5);
             _hasInitialValue.Add(6);
 
-            _hasInitialValue.Reverse();
-
+            Console.WriteLine(_hasInitialValue.ListToArray());
         }
     }
 }
