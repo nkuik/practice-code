@@ -9,7 +9,7 @@ class Game():
         self.simulation = simulation
 
     def next_round(self):
-        return rules.live_a_generation(self.grid, self.simulation)
+        self.grid = rules.live_a_generation(self.grid, self.simulation)
 
 
 def play_game():
@@ -17,9 +17,10 @@ def play_game():
     width = input('What width would you like?: ')
 
     grid = rules.Grid(int(height), int(width))
-    grid.assign(random.randrange(int(height)),
-                random.randrange(int(width)),
-                rules.ALIVE)
+    for _ in range(int(height)):
+        grid.assign(random.randrange(int(height)),
+                    random.randrange(int(width)),
+                    rules.ALIVE)
     sim = rules.simulate(grid.height, grid.width)
 
     game = Game(grid, sim)
